@@ -1,0 +1,17 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = crlf
+ij_coffeescript_spaces_within_object_literal_braces = false
+
+[*.js]
+ij_javascript_blank_lines_after_imports = 1
+ij_javascript_use_double_quotes = false
+
+[*.ts]
+ij_typescript_use_double_quotes = false
