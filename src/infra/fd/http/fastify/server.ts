@@ -1,25 +1,33 @@
-import express, {Express, Request, Response} from 'express';
+const fastify = require('fastify')({logger: true})
+
 import {BrandInMemoryRepository} from '../../db/brand-in-memory.respository';
 import {CreateBrandUseCase} from '../../../../application/abr/brand/create-brand.use-case';
 
-const app: Express = express();
-app.use(express.json());
 
 const brandRepository = new BrandInMemoryRepository();
 
-app.post('/brands', async (req: Request, res: Response) => {
+//fastfy json
+fastify.post('/brands', async (req: any, res: any) => {
   const createUseCase = new CreateBrandUseCase(brandRepository);
   const output = await createUseCase.execute(req.body);
-  res.status(201).json(output);
+  return output
 })
 
-app.get('/brands', async (req: Request, res: Response) => {
+fastify.get('/brands', async (req: any, res: any) => {
   const brands = await brandRepository.findAll();
-  res.status(200).json(brands);
+  return brands;
 })
-
 
 const port = process.env.PORT || 3000
-app.listen(port, () => {
-  console.log('Server is running on port ' + port);
-})
+
+// Run the server!
+const start = async () => {
+  try {
+    await fastify.listen({port: 3000})
+    console.log('Server is running on port ' + port);
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}
+start()
