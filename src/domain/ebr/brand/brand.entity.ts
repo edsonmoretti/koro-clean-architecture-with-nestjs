@@ -1,4 +1,7 @@
+import * as crypto from 'crypto';
+
 export type BrandProps = {
+  readonly id?: string
   name: string,
   description: string,
   createdAt?: Date | null,
@@ -9,11 +12,10 @@ export type BrandProps = {
 export class Brand {
   public props: Required<BrandProps>
 
-  constructor(
-    props: BrandProps
-  ) {
+  constructor(props: BrandProps) {
     this.props = {
       ...props,
+      id: props.id || crypto.randomUUID(),
       description: props.description,
       createdAt: props.createdAt || new Date(),
       updatedAt: props.updatedAt || new Date(),

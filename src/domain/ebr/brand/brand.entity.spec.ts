@@ -6,6 +6,7 @@ describe('Entity Brand', () => {
       name: 'Nike',
       description: 'Nike is a brand'
     })
+    expect(brand.props.id).toBeDefined()
     expect(brand.props.name).toBe('Nike')
   })
   test('should create a brand with all props', async () => {

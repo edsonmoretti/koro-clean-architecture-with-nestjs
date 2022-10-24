@@ -23,6 +23,7 @@ type CreateBrandUseCaseInput = {
 }
 
 type CreateBrandUseCaseOutput = {
+  id: string,
   name: string,
   description: string,
   createdAt: Date | null,
