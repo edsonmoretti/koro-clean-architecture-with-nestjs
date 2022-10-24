@@ -1,6 +1,6 @@
 import express, {Express, Request, Response} from 'express';
-import {BrandInMemoryRepository} from '../../fd/db/brand-in-memory.respository';
-import {CreateBrandUseCase} from '../../../application/abr/brand/create-brand.use-case';
+import {BrandInMemoryRepository} from '../../db/brand-in-memory.respository';
+import {CreateBrandUseCase} from '../../../../application/abr/brand/create-brand.use-case';
 
 const app: Express = express();
 app.use(express.json());
