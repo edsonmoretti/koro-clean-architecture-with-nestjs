@@ -14,9 +14,8 @@ app.post('/brands', async (req: Request, res: Response) => {
 })
 
 app.get('/brands', async (req: Request, res: Response) => {
-  const createUseCase = new CreateBrandUseCase(brandRepository);
-  const output = await createUseCase.execute(req.body);
-  res.status(201).json(output);
+  const brands = await brandRepository.findAll();
+  res.status(200).json(brands);
 })
 
 

@@ -2,6 +2,7 @@
 import {Brand} from '../brand/brand.entity';
 export interface BrandRepository {
   insert: (brand: Brand) => Promise<void>
+  findAll: () => Promise<Brand[]>
 }
 
 // TODO: SOLID -> D - Dependency Inversion Principle (Princípio da inversão de dependência)

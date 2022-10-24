@@ -6,4 +6,8 @@ export class BrandInMemoryRepository implements BrandRepository {
   async insert(brand: Brand): Promise<void> {
     this.brands.push(brand)
   }
+
+  async findAll(): Promise<Brand[]> {
+    return this.brands
+  }
 }
