@@ -3,19 +3,14 @@ const fastify = require('fastify')({logger: true})
 import {BrandInMemoryRepository} from '../../db/brand-in-memory.respository';
 import {CreateBrandUseCase} from '../../../../application/abr/brand/create-brand.use-case';
 
-
 const brandRepository = new BrandInMemoryRepository();
 
-//fastfy json
 fastify.post('/brands', async (req: any, res: any) => {
-  const createUseCase = new CreateBrandUseCase(brandRepository);
-  const output = await createUseCase.execute(req.body);
-  return output
+  return await (new CreateBrandUseCase(brandRepository)).execute(req.body)
 })
 
 fastify.get('/brands', async (req: any, res: any) => {
-  const brands = await brandRepository.findAll();
-  return brands;
+  return await brandRepository.findAll();
 })
 
 const port = process.env.PORT || 3000
@@ -30,4 +25,4 @@ const start = async () => {
     process.exit(1)
   }
 }
-start()
+start().then(r => console.log(r))
