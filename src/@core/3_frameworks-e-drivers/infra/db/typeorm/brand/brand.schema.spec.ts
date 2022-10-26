@@ -1,6 +1,6 @@
 import {DataSource} from 'typeorm';
 import {BrandSchema} from './brand.schema';
-import {Brand} from '../../../../../domain/ebr/brand/brand.entity';
+import {Brand} from '../../../../../0_enterprise-business-rules/domain/brand/brand.entity';
 
 describe('BrandSchema', () => {
   test('create a brand', async () => {

@@ -5,7 +5,7 @@ import {BrandModule} from './brand/brand.module';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {join} from 'path';
 import { ConfigModule } from "@nestjs/config";
-import {BrandSchema} from './@core/infra/fd/db/typeorm/brand/brand.schema';
+import {BrandSchema} from './@core/3_frameworks-e-drivers/infra/db/typeorm/brand/brand.schema';
 
 @Module({
   imports: [BrandModule, TypeOrmModule.forRoot(

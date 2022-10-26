@@ -1,5 +1,5 @@
-import {Brand} from '../../../domain/ebr/brand/brand.entity';
-import {BrandRepositoryInterface} from '../../../domain/ebr/repositories/brandRepositoryInterface';
+import {Brand} from '../../../0_enterprise-business-rules/domain/brand/brand.entity';
+import {BrandRepositoryInterface} from '../../../0_enterprise-business-rules/domain/repositories/brand.repository.interface';
 import {BrandUseCaseOutput} from './brand-types';
 
 //TODO: SOLID -> S - Single-responsibility Principle (Princípio da responsabilidade única)

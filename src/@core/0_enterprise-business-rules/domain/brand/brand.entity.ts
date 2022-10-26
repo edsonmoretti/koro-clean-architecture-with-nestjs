@@ -47,17 +47,5 @@ export class Brand extends Entity {
   get description() {
     return this.props.description
   }
-
-  set createdAt(createdAt: Date) {
-    this.props.createdAt = createdAt
-  }
-
-  set updatedAt(updatedAt: Date) {
-    this.props.updatedAt = updatedAt
-  }
-
-  set deletedAt(deletedAt: Date) {
-    this.props.deletedAt = deletedAt
-  }
 }
 

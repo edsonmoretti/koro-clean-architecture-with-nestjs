@@ -1,5 +1,5 @@
 import {EntitySchema} from 'typeorm';
-import {Brand} from '../../../../../domain/ebr/brand/brand.entity';
+import {Brand} from '../../../../../0_enterprise-business-rules/domain/brand/brand.entity';
 
 export const BrandSchema = new EntitySchema<Brand>({
   name: 'Brand',
