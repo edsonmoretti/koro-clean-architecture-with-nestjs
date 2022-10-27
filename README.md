@@ -24,6 +24,6 @@ I used in-memory database and sqlite for this project. You can flip between them
 └ @core/domain                  → Enterprise core business rules such as domain model objects (Aggregates, Entities, Value Objects) and repository interfaces
 └ @core/application             → Application core business rules such as usecases and types for usecases
 └ @core/controller              → Controllers interfaces
-└ infra                         → Frameworks, drivers and tools, too interfaces for database, cache, etc
+└ @core/infra                   → Interfaces, others Frameworks, drivers and tools, cache, etc
 ```
 
