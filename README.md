@@ -20,7 +20,7 @@ I used in-memory database and sqlite for this project. You can flip between them
 
 ### Folder structure
 ```
-└ .                             → Framework and Drivers / NestJS
+└ .                             → Framework NestJS
 └ @core/domain                  → Enterprise core business rules such as domain model objects (Aggregates, Entities, Value Objects) and repository interfaces
 └ @core/application             → Application core business rules such as usecases and types for usecases
 └ @core/controller              → Controllers interfaces
