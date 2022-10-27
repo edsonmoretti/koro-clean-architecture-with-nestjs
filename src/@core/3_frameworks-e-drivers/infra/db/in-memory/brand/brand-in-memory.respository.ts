@@ -23,4 +23,14 @@ export class BrandInMemoryRepository implements BrandRepositoryInterface {
       }
     }
   }
+
+  delete(id: string): Promise<boolean> {
+    for (let i = 0; i < this.brands.length; i++) {
+      if (this.brands[i].id === id) {
+        this.brands.splice(i, 1)
+        return Promise.resolve(true)
+      }
+    }
+    return Promise.resolve(false)
+  }
 }

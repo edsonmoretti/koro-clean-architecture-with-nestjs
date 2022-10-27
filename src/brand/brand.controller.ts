@@ -1,10 +1,11 @@
-import {Body, Controller, Get, Param, Post, Put} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
 import {CreateBrandDto} from './dto/create-brand.dto';
 import {CreateBrandUseCase} from '../@core/1_application-business-rules/application/brand/create-brand.use-case';
 import {ListAllBrandsUseCase} from '../@core/1_application-business-rules/application/brand/list-all-brands.use-case';
 import {BrandControllerInterface} from '../@core/2_interface-adapters/controller/brand/brand.controller.interface';
 import {UpdateBrandUseCase} from '../@core/1_application-business-rules/application/brand/update-brand.use-case';
 import {UpdateBrandDto} from './dto/update-brand.dto';
+import {DeleteBrandUseCase} from '../@core/1_application-business-rules/application/brand/delete-brand.use-case';
 
 @Controller('brand')
 export class BrandController implements BrandControllerInterface {
@@ -12,7 +13,8 @@ export class BrandController implements BrandControllerInterface {
   constructor(
     private createUseCase: CreateBrandUseCase,
     private listUseCase: ListAllBrandsUseCase,
-    private updateUseCase: UpdateBrandUseCase
+    private updateUseCase: UpdateBrandUseCase,
+    private delUseCase: DeleteBrandUseCase,
   ) {
     // Constructor
   }
@@ -31,6 +33,11 @@ export class BrandController implements BrandControllerInterface {
   update(@Param('id') id: string, @Body() updateBrandDto: UpdateBrandDto): {} {
 
     return this.updateUseCase.execute(id, updateBrandDto);
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.delUseCase.execute(id);
   }
 
   // @Delete(':id')

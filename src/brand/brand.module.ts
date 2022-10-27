@@ -16,8 +16,10 @@ import {
 import {DataSource} from 'typeorm';
 import {Brand} from '../@core/0_enterprise-business-rules/domain/brand/brand.entity';
 import {UpdateBrandUseCase} from '../@core/1_application-business-rules/application/brand/update-brand.use-case';
+import {DeleteBrandUseCase} from '../@core/1_application-business-rules/application/brand/delete-brand.use-case';
 
-const database = 'in-memory' || 'sqlite';
+// TODO: flip to test 2 database
+const database = 'sqlite' || 'in-memory';
 
 @Module({
   imports: [TypeOrmModule.forFeature([BrandSchema])],
@@ -57,6 +59,13 @@ const database = 'in-memory' || 'sqlite';
       },
       inject: [database === 'sqlite' ? BrandTypeOrmRepository : BrandInMemoryRepository]
     },
+    {
+      provide: DeleteBrandUseCase,
+      useFactory: (brandRepository: BrandRepositoryInterface) => {
+        return new DeleteBrandUseCase(brandRepository);
+      },
+      inject: [database === 'sqlite' ? BrandTypeOrmRepository : BrandInMemoryRepository]
+    }
 
   ]
 })

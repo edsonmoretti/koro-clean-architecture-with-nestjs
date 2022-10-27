@@ -21,4 +21,13 @@ export class BrandTypeOrmRepository implements BrandRepositoryInterface {
     await this.ormRepo.save(brand);
   }
 
+  async delete(id: string): Promise<boolean> {
+    const brand = await this.ormRepo.findOneBy({id})
+    if (brand) {
+      await this.ormRepo.delete(id)
+      return true
+    }
+    return false
+  }
+
 }

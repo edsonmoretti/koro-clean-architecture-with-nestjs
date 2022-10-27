@@ -5,6 +5,7 @@ export interface BrandRepositoryInterface {
   insert: (brand: Brand) => Promise<void>
   findAll: () => Promise<Brand[]>
   update: (brand: Brand) => Promise<void>
+  delete: (id: string) => Promise<boolean>
 }
 
 // TODO: SOLID -> D - Dependency Inversion Principle (Princípio da inversão de dependência)
