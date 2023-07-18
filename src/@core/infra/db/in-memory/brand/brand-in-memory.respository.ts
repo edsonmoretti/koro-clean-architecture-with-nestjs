@@ -1,7 +1,7 @@
-import {Brand} from '../../../../../0_enterprise-business-rules/domain/brand/brand.entity';
+import {Brand} from '../../../../domain/brand/brand.entity';
 import {
   BrandRepositoryInterface
-} from '../../../../../0_enterprise-business-rules/domain/repositories/brand.repository.interface';
+} from '../../../../domain/repositories/brand.repository.interface';
 
 
 export class BrandInMemoryRepository implements BrandRepositoryInterface {

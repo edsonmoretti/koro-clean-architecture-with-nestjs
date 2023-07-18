@@ -1,6 +1,6 @@
 import {CreateBrandUseCase} from './create-brand.use-case';
-import {BrandInMemoryRepository} from '../../../3_frameworks-e-drivers/infra/db/in-memory/brand/brand-in-memory.respository';
-import {Brand} from '../../../0_enterprise-business-rules/domain/brand/brand.entity';
+import {BrandInMemoryRepository} from '../../infra/db/in-memory/brand/brand-in-memory.respository';
+import {Brand} from '../../domain/brand/brand.entity';
 
 describe('CreateBrandUseCase', () => {
   it('should create a brand', async () => {

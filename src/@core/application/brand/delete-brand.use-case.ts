@@ -1,6 +1,6 @@
 import {
   BrandRepositoryInterface
-} from '../../../0_enterprise-business-rules/domain/repositories/brand.repository.interface';
+} from '../../domain/repositories/brand.repository.interface';
 
 export class DeleteBrandUseCase {
 

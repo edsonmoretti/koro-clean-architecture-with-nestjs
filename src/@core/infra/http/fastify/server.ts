@@ -1,5 +1,5 @@
 import {BrandInMemoryRepository} from '../../db/in-memory/brand/brand-in-memory.respository';
-import {CreateBrandUseCase} from '../../../../1_application-business-rules/application/brand/create-brand.use-case';
+import {CreateBrandUseCase} from '../../../application/brand/create-brand.use-case';
 
 const fastify = require('fastify')({logger: true})
 

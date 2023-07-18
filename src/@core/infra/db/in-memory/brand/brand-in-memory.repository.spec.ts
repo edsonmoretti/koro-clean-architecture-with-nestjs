@@ -1,5 +1,5 @@
 import {BrandInMemoryRepository} from './brand-in-memory.respository';
-import {Brand} from '../../../../../0_enterprise-business-rules/domain/brand/brand.entity';
+import {Brand} from '../../../../domain/brand/brand.entity';
 
 describe('BrandInMemoryRepository', () => {
   test('should create a brand and persist it', async () => {

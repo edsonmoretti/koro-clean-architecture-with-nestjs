@@ -1,5 +1,5 @@
-import {Brand} from '../../../0_enterprise-business-rules/domain/brand/brand.entity';
-import {BrandRepositoryInterface} from '../../../0_enterprise-business-rules/domain/repositories/brand.repository.interface';
+import {Brand} from '../../domain/brand/brand.entity';
+import {BrandRepositoryInterface} from '../../domain/repositories/brand.repository.interface';
 import {BrandUseCaseInput, BrandUseCaseOutput} from './brand-types';
 
 export class CreateBrandUseCase {

@@ -1,11 +1,11 @@
 import {Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
 import {CreateBrandDto} from './dto/create-brand.dto';
-import {CreateBrandUseCase} from '../@core/1_application-business-rules/application/brand/create-brand.use-case';
-import {ListAllBrandsUseCase} from '../@core/1_application-business-rules/application/brand/list-all-brands.use-case';
-import {BrandControllerInterface} from '../@core/2_interface-adapters/controller/brand/brand.controller.interface';
-import {UpdateBrandUseCase} from '../@core/1_application-business-rules/application/brand/update-brand.use-case';
+import {CreateBrandUseCase} from '../@core/application/brand/create-brand.use-case';
+import {ListAllBrandsUseCase} from '../@core/application/brand/list-all-brands.use-case';
+import {BrandControllerInterface} from '../@core/controller/brand/brand.controller.interface';
+import {UpdateBrandUseCase} from '../@core/application/brand/update-brand.use-case';
 import {UpdateBrandDto} from './dto/update-brand.dto';
-import {DeleteBrandUseCase} from '../@core/1_application-business-rules/application/brand/delete-brand.use-case';
+import {DeleteBrandUseCase} from '../@core/application/brand/delete-brand.use-case';
 
 @Controller('brand')
 export class BrandController implements BrandControllerInterface {
