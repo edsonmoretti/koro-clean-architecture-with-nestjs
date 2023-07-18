@@ -1,22 +1,22 @@
 import {Module} from '@nestjs/common';
 import {BrandController} from './brand.controller';
-import {CreateBrandUseCase} from '../@core/application/brand/create-brand.use-case';
+import {CreateBrandUseCase} from '../../@core/application/brand/create-brand.use-case';
 import {
   BrandRepositoryInterface
-} from '../@core/domain/repositories/brand.repository.interface';
-import {ListAllBrandsUseCase} from '../@core/application/brand/list-all-brands.use-case';
+} from '../../@core/domain/repositories/brand.repository.interface';
+import {ListAllBrandsUseCase} from '../../@core/application/brand/list-all-brands.use-case';
 import {
   BrandInMemoryRepository
-} from '../@core/infra/db/in-memory/brand/brand-in-memory.respository';
+} from '../../@core/infra/db/in-memory/brand/brand-in-memory.respository';
 import {getDataSourceToken, TypeOrmModule} from '@nestjs/typeorm';
-import {BrandSchema} from '../@core/infra/db/typeorm/brand/brand.schema';
+import {BrandSchema} from '../../@core/infra/db/typeorm/brand/brand.schema';
 import {
   BrandTypeOrmRepository
-} from '../@core/infra/db/typeorm/brand/brand-type-orm.respository';
+} from '../../@core/infra/db/typeorm/brand/brand-type-orm.respository';
 import {DataSource} from 'typeorm';
-import {Brand} from '../@core/domain/brand/brand.entity';
-import {UpdateBrandUseCase} from '../@core/application/brand/update-brand.use-case';
-import {DeleteBrandUseCase} from '../@core/application/brand/delete-brand.use-case';
+import {Brand} from '../../@core/domain/brand/brand.entity';
+import {UpdateBrandUseCase} from '../../@core/application/brand/update-brand.use-case';
+import {DeleteBrandUseCase} from '../../@core/application/brand/delete-brand.use-case';
 
 // TODO: flip to test 2 database
 const database = 'sqlite' || 'in-memory';
